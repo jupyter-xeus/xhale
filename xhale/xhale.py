@@ -7,8 +7,7 @@
 ############################################################################
 import sys
 
-import urllib.parse
-import urllib.request
+from six.moves import urllib
 
 from xml.etree import ElementTree, cElementTree
 from xml.dom import minidom

@@ -38,7 +38,7 @@ setup(
     license = "BSD",
     classifiers = CLASSIFIERS,
     packages = find_packages(),
-    install_requires = ["sphinx"],
+    install_requires = ["six", "sphinx"],
     entry_points={ 'console_scripts': [
         'xhale=xhale.xhale_cli:main',
         ],

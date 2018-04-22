@@ -20,6 +20,7 @@ platform:
     - x64
 
 install:
+    - cmd: SET PATH=%CONDA_INSTALL_LOCN%;%CONDA_INSTALL_LOCN%\Scripts;%PATH%
     - cmd: python setup.py install
 
 # Skip .NET project specific build phase.
