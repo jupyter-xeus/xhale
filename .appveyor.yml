@@ -1,4 +1,4 @@
-environment:  
+environment:
   matrix:
     - TARGET_ARCH: "x64"
       PYTHON_BUILD_RESTRICTIONS: "2.7*"
@@ -17,14 +17,16 @@ environment:
       CONDA_BUILDS:  C:\\Miniconda36-x64\conda-bld\win-64
 
 platform:
-    - x64
+  - x64
 
 install:
-    - cmd: SET PATH=%CONDA_INSTALL_LOCN%;%CONDA_INSTALL_LOCN%\Scripts;%PATH%
-    - cmd: python setup.py install
+
+  - cmd: SET PATH=%CONDA_INSTALL_LOCN%;%CONDA_INSTALL_LOCN%\Scripts;%PATH%
+
+  - cmd: python setup.py install
 
 # Skip .NET project specific build phase.
 build: off
 
 test_script:
-    - xhale -p xtensor --url https://xtensor.readthedocs.io/en/latest/
+  - xhale -p xtensor --url https://xtensor.readthedocs.io/en/latest/

@@ -19,7 +19,7 @@ def main():
     args = parser.parse_args()
 
     url = args.url
-    output = args.output
+    package = args.package
     inventory = xhale.get_sphinx_inventory(url)
     tag_elem = xhale.extract_tag(inventory, url)
-    xhale.write_tagfile(tag_elem, output, url)
+    xhale.write_tagfile(tag_elem, package, url)
