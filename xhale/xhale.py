@@ -19,7 +19,6 @@ from sphinx.builders.html import INVENTORY_FILENAME
 def get_sphinx_inventory(url):
     """
     get the sphinx inventory from a url.
-    (https://gist.github.com/dahlia/9e3a988a52de6319cd5d)
 
     Parameters
     ----------
@@ -52,12 +51,11 @@ def extract_tag(inventory, url):
 
     each value of this dictionary is again a dictionary with
 
-    - key: the name of the element
-    - value: a tuple where the third index is the url to the 
-             corresponding documentation
+    - key : the name of the element
+    - value : a tuple where the third index is the url to the corresponding documentation
 
-    Parmeters
-    ---------
+    Parameters
+    ----------
 
     inventory : dict
                 sphinx inventory
