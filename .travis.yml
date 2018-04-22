@@ -1,0 +1,62 @@
+language: generic
+env:
+  matrix:
+  - PYVER="2.7"
+  - PYVER="3.4"
+  - PYVER="3.5"
+  - PYVER="3.6"
+  global:
+  - PROJECT_NAME=xhale
+  - GITHUB_REPO_NAME=QuantStack/xhale
+os:
+  - linux
+  - osx
+before_install:
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+    fi
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then 
+      sudo apt-get update;
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+install:
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+  - |
+    if [[ $TRAVIS_TAG ]]; then
+      conda install conda-build anaconda-client;
+    fi;
+  - conda create -q -n xhale-env python=${PYVER}
+  - source activate xhale-env
+  - python setup.py install
+script:
+  - xhale -p xtensor --url https://xtensor.readthedocs.io/en/latest/
+  - |
+    if [[ $TRAVIS_TAG ]]; then
+      python setup.py sdist;
+      conda build -q --python ${PYVER} recipes &&
+      conda install --use-local ${PROJECT_NAME} &&
+      conda uninstall ${PROJECT_NAME};
+    fi
+deploy:
+  - provider: pypi
+    skip_cleanup: true
+    user: xxx
+    password: "${PYPI_PASSWD}"
+    server: https://pypi.org/legacy/
+    on:
+      repo: "${GITHUB_REPO_NAME}"
+      tags: true
+      condition: "$PYVER == 3.6 && $TRAVIS_OS_NAME == linux"
+  - provider: script
+    skip_cleanup: true
+    script: anaconda -t $ANACONDA_TOKEN upload ${HOME}/miniconda/conda-bld/*/${PROJECT_NAME}-*.tar.bz2
+    on:
+      repo: "${GITHUB_REPO_NAME}"
+      tags: true
