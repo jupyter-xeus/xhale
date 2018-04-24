@@ -24,8 +24,8 @@ CLASSIFIERS = [
 
 MAJOR = 0
 MINOR = 1
-MAINTENANCE = 0
-VERSION = "{}.{}.{}".format(MAJOR, MINOR, MAINTENANCE)
+PACTH = 0
+VERSION = "{}.{}.{}".format(MAJOR, MINOR, PATCH)
 
 with open("xhale/version.py", "w") as f:
     f.write("__version__ = '{}'\n".format(VERSION))

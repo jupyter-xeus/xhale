@@ -31,8 +31,9 @@ def get_sphinx_inventory(url):
 
     """
     inventory_url = urllib.parse.urljoin(url, INVENTORY_FILENAME)
-    with urllib.request.urlopen(inventory_url) as f:
-        inventory = InventoryFile.load(f, url, urllib.parse.urljoin)
+    f = urllib.request.urlopen(inventory_url)
+    inventory = InventoryFile.load(f, url, urllib.parse.urljoin)
+    f.close()
     return inventory
 
 

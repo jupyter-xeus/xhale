@@ -28,6 +28,9 @@
 #
 # needs_sphinx = '1.0'
 
+def setup(app):
+    app.add_stylesheet("main_stylesheet.css")
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -85,6 +88,8 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
+
+html_logo = "quantstack-white.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
