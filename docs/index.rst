@@ -5,7 +5,8 @@
 
 xhale
 =====
-Converter from sphinx and breathe inventory files to doxygen tag files
+
+Converts sphinx and breathe inventory files to doxygen tag files.
 
 Introduction
 ------------

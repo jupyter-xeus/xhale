@@ -5,6 +5,6 @@
 #                                                                          #
 # The full license is in the file LICENSE, distributed with this software. #
 ############################################################################
-from __future__ import absolute_import
+
 from .xhale import get_sphinx_inventory, extract_tag, write_tagfile
-from .version import __version__
+from ._version import __version__

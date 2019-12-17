@@ -1,8 +1,6 @@
 language: generic
 env:
   matrix:
-  - PYVER="2.7"
-  - PYVER="3.4"
   - PYVER="3.5"
   - PYVER="3.6"
   global:
