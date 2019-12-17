@@ -5,6 +5,8 @@
 #                                                                          #
 # The full license is in the file LICENSE, distributed with this software. #
 ############################################################################
+
+import os
 from setuptools import setup, find_packages
 
 CLASSIFIERS = [
@@ -22,19 +24,16 @@ CLASSIFIERS = [
     "Operating System :: MacOS"
 ]
 
-MAJOR = 0
-MINOR = 1
-PATCH = 0
-VERSION = "{}.{}.{}".format(MAJOR, MINOR, PATCH)
-
-with open("xhale/version.py", "w") as f:
-    f.write("__version__ = '{}'\n".format(VERSION))
+here = os.path.dirname(os.path.abspath(__file__))
+version_ns = {}
+with open(os.path.join(here, 'xhale', '_version.py')) as f:
+    exec(f.read(), {}, version_ns)
 
 setup(
     name = "xhale",
     author = "loic.gouarin@gmail.com",
     description = "convert sphinx inventory file into a doxygen tag file",
-    version = VERSION,
+    version = version_ns['__version__'],
     license = "BSD",
     classifiers = CLASSIFIERS,
     packages = find_packages(),

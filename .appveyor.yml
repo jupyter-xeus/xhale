@@ -1,11 +1,6 @@
 environment:
   matrix:
     - TARGET_ARCH: "x64"
-      PYTHON_BUILD_RESTRICTIONS: "2.7*"
-      CONDA_PY: "27"
-      CONDA_INSTALL_LOCN: "C:\\Miniconda-x64"
-      CONDA_BUILDS:  C:\\Miniconda-x64\conda-bld\win-64
-    - TARGET_ARCH: "x64"
       PYTHON_BUILD_RESTRICTIONS: "3.5*"
       CONDA_PY: "35"
       CONDA_INSTALL_LOCN: "C:\\Miniconda35-x64"
