@@ -58,7 +58,7 @@ author = 'Loic gouarin'
 # built documents.
 #
 # The short X.Y version.
-from xhale.version import __version__
+from xhale._version import __version__
 version = __version__
 # The full version, including alpha/beta/rc tags.
 release = __version__
