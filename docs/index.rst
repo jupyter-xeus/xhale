@@ -11,7 +11,7 @@ Converts sphinx and breathe inventory files to doxygen tag files.
 Introduction
 ------------
 
-``xhale`` transforms an inventory file given by sphinx into a doxygen tag file. This package is mainly used for `xeus-cling <https://github.com/QuantStack/xeus-cling>`_ in order to be able to get the documentation of a C++ package in a jupyter notebook.
+``xhale`` transforms an inventory file given by sphinx into a doxygen tag file. This package is mainly used for `xeus-cling <https://github.com/jupyter-xeus/xeus-cling>`_ in order to be able to get the documentation of a C++ package in a jupyter notebook.
 
 To create your tag file, you just have to use the script **xhale** and give the following arguments
 

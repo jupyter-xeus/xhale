@@ -5,7 +5,7 @@ env:
   - PYVER="3.6"
   global:
   - PROJECT_NAME=xhale
-  - GITHUB_REPO_NAME=QuantStack/xhale
+  - GITHUB_REPO_NAME=jupyter-xeus/xhale
 os:
   - linux
   - osx
