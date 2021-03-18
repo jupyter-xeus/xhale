@@ -75,11 +75,11 @@ def extract_tag(inventory, url):
 
     get_relative_url = lambda x: x[2].replace(url, '')
 
-    for c, v in inventory['cpp:class'].items():
+    for c, v in inventory.get('cpp:class', {}).items():
         classes[c] = get_relative_url(v)
         class_methods[c] = {}
 
-    for method, v in inventory['cpp:function'].items():
+    for method, v in inventory.get('cpp:function', {}).items():
         found = False
         for c in class_methods.keys():
             find = c + '::'
@@ -90,7 +90,7 @@ def extract_tag(inventory, url):
         if not found:
             functions[method] = get_relative_url(v)
 
-    for typename, v in inventory['cpp:type'].items():
+    for typename, v in inventory.get('cpp:type', {}).items():
         types[typename] = get_relative_url(v)
 
     return {'class': classes, 
