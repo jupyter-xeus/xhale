@@ -1,7 +1,7 @@
 # xhale
 
 [![Documentation](http://readthedocs.org/projects/xhale/badge/?version=latest)](https://xhale.readthedocs.io/en/latest/?badge=latest)
-[![Join the Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/QuantStack/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Zulip](https://img.shields.io/badge/social_chat-zulip-blue.svg)](https://jupyter.zulipchat.com/#narrow/channel/539737-Jupyter-Kernels)
 
 Converts sphinx and breathe inventory files to doxygen tag files.
 
